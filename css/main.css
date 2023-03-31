@@ -11,6 +11,8 @@
     --footer-text-color: #E7E9FC;
     --footer-link-color: #31D0AA;
     --border-icon-color: #D0D2E3;
+    --modal-background-color: #FCFCFC;
+    --modal-text-color: #757575;
 
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -38,6 +40,17 @@ body {
 .section {
     padding-top: 120px;
     padding-bottom: 120px;
+}
+
+.is-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
 }
 
 /*--header--*/
@@ -135,7 +148,7 @@ body {
 }
 
 .link:active {
-    background-color: var(--hover-color);
+    
     
 }
 
@@ -294,6 +307,15 @@ body {
     color: var(--background-team);
 }
 
+
+
+
+
+            /* --- Modal window --- */
+
+
+
+
 .backdrop {
     position: fixed;
 
@@ -316,17 +338,19 @@ body {
 }
 
 .modal {
-    min-width: 408px;
-    min-height: 576px;
+    width: 408px;
+    height: 584px;
 
     position: absolute;
     top: 50%;
     left: 50%;
 
+    padding: 72px 24px 24px;
+
     transform: translate(-50%, -50%) scale(1);
     transition: 250ms var(--timing-function);
 
-    background-color:  var(--primary-white-color);
+    background-color:  var(--modal-background-color);
 }
 
 
@@ -363,13 +387,192 @@ body {
     fill: var(--primary-white-color);
 }
 
+.
+
 .icon-close {
     transition: fill var(--timing-function);
 }
 
 
+   /*  --- Form modal --- */
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form-field:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    display: flex;
+    justify-content: center;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: var(--primary-text-color);
+}
+
+.modal-form-title {
+    display: block;
+    
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+
+    margin-bottom: 4px;
+        
+    color: var(--clients-button-color);
+}
+
+.modal-form-input-wrapper {
+    position: relative;
+
+    display: block;
+}
+
+.modal-form-input {
+    width: 100%;
+    height: 40px;
+    
+    padding-left: 38px;
+
+    font-size: 16px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    color: var(--accent-color);
+}
+
+.modal-form-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.modal-form-input:focus + .modal-form-input-icon {
+    fill: var(--accent-color);
+}
+
+.modal-form-input-icon {
+    display: block;
+
+    position: absolute;
+
+    top: 11px;
+    left: 16px;
+}
+
+.modal-form-textarea {
+    resize: none;
+
+    width: 100%;
+    height: 120px;
+
+    font-size: 16px;
+
+    padding: 8px 16px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    color: var(--accent-color);
+}
+
+.modal-form-textarea:focus {
+    border-color: var(--hover-color);
+    outline: none;
+}
+
+.modal-form-check:focus + .modal-form-check-text::before {
+    outline: 2px solid var(--hover-color)
+}
+
+.modal-form-check-text::before {
+    content: '';
+    
+    display: block;
+
+    width: 16px;
+    height: 16px;
+
+    margin-right: 8px;
+
+    cursor: pointer;
+
+    border: 1.25px solid var(--primary-text-color);
+    border-radius: 2px;
+}
+
+.modal-form-check-text {
+    display: flex;
+    align-items: center;
+
+    margin-top: 16px;
+    
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    color: var(--modal-text-color);
+}
+
+
+.modal-form-textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-check:checked + .modal-form-check-text::before {
+    border-color: var(--hover-color);
+    background-image: url(../images/Check.svg);
+    background-position: center;
+}
+    
+.modal-check-link {
+    color: var(--accent-color);
+}
+
+.form-modal-button {
+    align-self: center;
+    
+    margin-top: 24px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    width: 169px;
+    height: 56px;
+
+    transition: 250ms var(--timing-function);
+    
+    border-color: var(--accent-color);
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+}
+
+.form-modal-button:hover,
+.form-modal-button:focus {
+    background-color: var(--hover-color);
+    
+}
+
 
 /*--- about section ---*/
+
+
 
 
 
@@ -864,3 +1067,140 @@ body {
     width: 24px;
     height: 24px;
 }
+
+.form-footer {
+    display: inline-block;
+
+    margin-left: 80px;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    
+    color: var(--primary-white-color);
+}
+
+.position-div {
+    display: flex;
+
+    margin-top: 16px;
+}
+
+.form-div {
+    display: flex;
+
+    position: relative;
+    overflow: hidden;
+
+}
+
+.form-input {
+    width: 264px;
+    height: 40px;
+
+    padding-left: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+
+    outline: rgba(255, 255, 255, 0.3);
+
+    color: var(--primary-white-color);
+    background-color: var(--primary-text-color);
+}
+
+
+.text-email {
+    position: absolute;
+    
+    top: 8px;
+    left: 16px;
+
+    font-size: 12px;
+    line-height: 2;
+
+    letter-spacing: 0.04em;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-input:focus {
+   
+}
+
+.form-input:focus + .text-email,
+.form-input:not(:placeholder-shown) + .text-email {
+    transform: translateY(-30px);
+}
+
+.form-input:placeholder-shown {
+
+}
+
+.button-div {
+    position: relative;
+
+    display: flex;
+
+    margin-left: 24px;
+}
+
+.form-button {
+    display: inline-block;
+
+    cursor: pointer;
+    
+    width: 165px;
+    height: 40px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    border-radius: 4px;
+
+    transition: 250ms var(--timing-function);
+
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.form-button:hover,
+.form-button:focus {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+.button-title {
+    position: absolute;
+
+    top: 8px;
+    left: 24px;
+}
+
+.span-button {
+    position: absolute;
+
+    top: 8px;
+    right: 24px;
+
+    fill: var(--primary-white-color);
+}
+
+.icon-button {
+    width: 24px;
+    height: 24px;
+
+}
+
+
+
