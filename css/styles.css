@@ -507,3 +507,127 @@ body {
     width: 24px;
     height: 24px;
 }
+
+.form-footer {
+    display: inline-block;
+
+    margin-left: 80px;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+
+    color: var(--primary-white-color);
+}
+
+.position-div {
+    display: flex;
+
+    margin-top: 16px;
+}
+
+.form-div {
+    display: flex;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.form-input {
+    width: 264px;
+    height: 40px;
+
+    padding-left: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+
+    outline: rgba(255, 255, 255, 0.3);
+
+    color: var(--primary-white-color);
+    background-color: var(--primary-text-color);
+}
+
+.text-email {
+    position: absolute;
+
+    top: 8px;
+    left: 16px;
+
+    font-size: 12px;
+    line-height: 2;
+
+    letter-spacing: 0.04em;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-input:focus + .text-email,
+.form-input:not(:placeholder-shown) + .text-email {
+    transform: translateY(-30px);
+}
+
+.button-div {
+    position: relative;
+
+    display: flex;
+
+    margin-left: 24px;
+}
+
+.form-button {
+    display: inline-block;
+
+    cursor: pointer;
+
+    width: 165px;
+    height: 40px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    
+    border-radius: 4px;
+
+    transition: 250ms var(--timing-function);
+
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.form-button:hover,
+.form-button:focus {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+.button-title {
+    position: absolute;
+
+    top: 8px;
+    left: 24px;
+}
+
+.span-button {
+    position: absolute;
+
+    top: 8px;
+    right: 24px;
+
+    fill: var(--primary-white-color);
+}
+
+.icon-button {
+    width: 24px;
+    height: 24px;
+}
