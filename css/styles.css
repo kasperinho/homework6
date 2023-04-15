@@ -115,7 +115,7 @@ body {
     padding-bottom: 24px;
 }
 
-.header-link .item+.item {
+.header-link .item + .item {
     margin-left: 40px;
 }
 
@@ -163,6 +163,10 @@ body {
 
 .link:hover::after {
     transform: scaleX(1);
+}
+
+.link.active {
+    color: var(--hover-color);
 }
 
 .header-contacts {
